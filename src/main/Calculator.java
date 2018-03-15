@@ -22,4 +22,20 @@ public class Calculator {
     public void drop() {
         values.pop();
     }
+
+    public void add() {
+        BigDecimal value1 = values.peek();
+        values.pop();
+        BigDecimal value2 = values.peek();
+        values.pop();
+        values.replaceTop(value2.add(value1));
+    }
+
+    public void subtract() {
+        BigDecimal value1 = values.peek();
+        values.pop();
+        BigDecimal value2 = values.peek();
+        values.pop();
+        values.replaceTop(value2.subtract(value1));
+    }
 }
