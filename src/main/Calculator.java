@@ -13,4 +13,10 @@ public class Calculator {
     public void setAccumulator(BigDecimal accumulator) {
         this.accumulator = accumulator;
     }
+
+    public void enter() {
+    }
+
+    public void drop() {
+    }
 }
