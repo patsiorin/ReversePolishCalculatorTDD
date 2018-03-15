@@ -17,14 +17,13 @@ public class CalculatorTest {
     }
     @Test
     public void testNewCalculatorHasAnAccumulatorOfZero() {
-        Calculator calculator = new Calculator();
         assertEquals(BigDecimal.ZERO, calculator.getAccumulator());
     }
 
     @Test
     public void testSettingAccumulatorValue() {
-        Calculator calculator = new Calculator();
         BigDecimal value = new BigDecimal(42);
         calculator.setAccumulator(value);
+        assertEquals(value, calculator.getAccumulator());
     }
 }
