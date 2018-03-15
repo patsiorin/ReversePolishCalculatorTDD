@@ -20,14 +20,14 @@ public class OperationsTest {
     }
 
     @Test
-    public void testAdd() {
-        calculator.add();
+    public void testAddExecution() {
+        calculator.execute("+");
         assertEquals(new BigDecimal(33), calculator.getAccumulator());
     }
 
     @Test
-    public void testSubtract() {
-        calculator.subtract();
+    public void testSubtractExecution() {
+        calculator.execute("-");
         assertEquals(new BigDecimal(-11), calculator.getAccumulator());
     }
 }

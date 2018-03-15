@@ -16,26 +16,26 @@ public class Calculator {
 
     public void enter() {
         values.push(getAccumulator());
-
     }
 
     public void drop() {
         values.pop();
     }
 
-    public void add() {
-        BigDecimal value1 = values.peek();
-        values.pop();
-        BigDecimal value2 = values.peek();
-        values.pop();
-        values.replaceTop(value2.add(value1));
+    public void execute(String op) {
+        Operation operation = null;
+        switch(op) {
+            case "+":
+                operation = new AddOperation();
+                break;
+            case "-":
+                operation = new SubtractOperation();
+                break;
+            default:
+                throw new UnsupportedOperationException("Operation not supported");
+        }
+        operation.apply(values);
     }
 
-    public void subtract() {
-        BigDecimal value1 = values.peek();
-        values.pop();
-        BigDecimal value2 = values.peek();
-        values.pop();
-        values.replaceTop(value2.subtract(value1));
-    }
+    //TODO: add multiply, divide, unary operators and square
 }
