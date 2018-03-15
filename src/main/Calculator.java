@@ -31,11 +31,17 @@ public class Calculator {
             case "-":
                 operation = new SubtractOperation();
                 break;
+            case "*":
+                operation = new MultiplyOperation();
+                break;
+            case "/":
+                operation = new DivideOperation();
+                break;
             default:
                 throw new UnsupportedOperationException("Operation not supported");
         }
         operation.apply(values);
     }
 
-    //TODO: add multiply, divide, unary operators and square
+    //TODO: add nary operators and square
 }

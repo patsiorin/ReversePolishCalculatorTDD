@@ -30,4 +30,18 @@ public class OperationsTest {
         calculator.execute("-");
         assertEquals(new BigDecimal(-11), calculator.getAccumulator());
     }
+
+    @Test
+    public void testMultiplyExecution() {
+        calculator.execute("*");
+        assertEquals(new BigDecimal(242), calculator.getAccumulator());
+    }
+
+    @Test
+    public void testDivideExecution() {
+        calculator.execute("/");
+        assertEquals(new BigDecimal(1), calculator.getAccumulator());
+    }
+
+
 }
