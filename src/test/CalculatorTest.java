@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -8,6 +9,12 @@ import static org.junit.Assert.assertEquals;
  * Created by Valerii Patsiorin on 15.03.2018.
  */
 public class CalculatorTest {
+    private Calculator calculator;
+
+    @Before
+    public void createCalculator() {
+        calculator = new Calculator();
+    }
     @Test
     public void testNewCalculatorHasAnAccumulatorOfZero() {
         Calculator calculator = new Calculator();
