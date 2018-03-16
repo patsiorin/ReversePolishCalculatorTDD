@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.naming.OperationNotSupportedException;
 import java.math.BigDecimal;
 
 import static org.junit.Assert.assertEquals;
@@ -41,5 +42,10 @@ public class OperationsTest {
     public void testDivideExecution() {
         calculator.execute("/");
         assertEquals(new BigDecimal(1), calculator.getAccumulator());
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void testUnsupportedOperation() {
+        calculator.execute("%");
     }
 }

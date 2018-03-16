@@ -23,7 +23,7 @@ public class Calculator {
     }
 
     public void execute(String op) {
-        Operation operation = null;
+        Operation operation;
         switch(op) {
             case "+":
                 operation = new AddOperation();
@@ -43,6 +43,10 @@ public class Calculator {
             default:
                 throw new UnsupportedOperationException("Operation not supported");
         }
+        execute(operation);
+    }
+
+    public void execute(Operation operation) {
         operation.apply(values);
     }
 }
