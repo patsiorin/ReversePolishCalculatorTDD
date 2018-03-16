@@ -37,11 +37,12 @@ public class Calculator {
             case "/":
                 operation = new DivideOperation();
                 break;
+            case "SQR":
+                operation = new SquareOperation();
+                break;
             default:
                 throw new UnsupportedOperationException("Operation not supported");
         }
         operation.apply(values);
     }
-
-    //TODO: add nary operators and square
 }
